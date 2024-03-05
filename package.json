@@ -21,6 +21,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "hono": "^4.0.9"
+    "hono": "^4.0.9",
+    "sqlite3": "^5.1.7"
   }
 }
