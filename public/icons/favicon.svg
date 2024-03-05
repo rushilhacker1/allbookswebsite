@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="80" fill="#f9f2c7" />  
+  <path fill="#fff" d="M60 80v40h80l-20 20-20-20z" />  
+  <path d="M70 40l40 40M110 80v40" stroke="#2ecc71" stroke-width="4" stroke-linecap="round" fill="none" />  
+  <text x="100" y="160" font-size="22" fill="#34495e" text-anchor="middle">
+    Get Books
+  </text>
+</svg>
