@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Favicon</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <button onclick="downloadFavicon()">Download Favicon</button>
+
+    <script>
+        function downloadFavicon() {
+            var faviconUrl = '/public/static/html/dummy.pdf';
+            var filename = 'dummy.pdf';
+
+            var a = document.createElement('a');
+            a.href = faviconUrl;
+            a.download = filename;
+
+            document.body.appendChild(a);
+            a.click();
+
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>

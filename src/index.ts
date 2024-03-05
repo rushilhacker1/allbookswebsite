@@ -12,6 +12,8 @@ const app = new hono.Hono()
 
 //routes
 app.use('/favicon.ico', serveStatic({ path: './public/icons/favicon.ico' }))
+app.use('/dummy.pdf', serveStatic({ path: './public/static/dummy.pdf' }))
+app.use('/', serveStatic({ path: './public/static/index.html' }))
 
 //server
 const server = Bun.serve({
