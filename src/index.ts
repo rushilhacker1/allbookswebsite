@@ -2,12 +2,12 @@
 import { log } from "console"
 const hono = require('hono')
 import { serveStatic } from 'hono/bun'
-import {getBooks, createTable, insertBook} from './databaseManagement'
+import { getBooks, createTable, insertBook } from './databaseManagement'
 
 //db init
-try{
+try {
   db.query("select * from books").run()
-} catch(error){
+} catch (error) {
   createTable()
 }
 
