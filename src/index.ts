@@ -2,7 +2,7 @@
 import { log } from "console"
 const hono = require('hono')
 import { serveStatic } from 'hono/bun'
-import { getBooks, createTable, insertBook } from './databaseManagement'
+import { getBooks, createTable, insertBook, db } from './databaseManagement'
 
 //db init
 try {
