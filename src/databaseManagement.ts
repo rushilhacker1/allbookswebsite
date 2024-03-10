@@ -22,7 +22,7 @@ export async function createTable() {
 
 export async function insertBook(name: string) {
     try {
-        await db.run('INSERT INTO books (name) VALUES (?, ?)', [name]);
+        await db.run('INSERT INTO books (name) VALUES (?)', [name]);
         console.log(`Book "${name}" added to database`);
     } catch (error) {
         console.error('Error adding book:', error);

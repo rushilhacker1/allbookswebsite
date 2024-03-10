@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download Favicon</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/index">
 </head>
-<body>
-    <button onclick="downloadFavicon()">Download Favicon</button>
+
+<body id="body">
 
     <script>
-        function downloadFavicon() {
-            var faviconUrl = '/public/static/html/dummy.pdf';
-            var filename = 'dummy.pdf';
 
-            var a = document.createElement('a');
-            a.href = faviconUrl;
-            a.download = filename;
+         fetch('/listBooks')
+            .then(response => response.json())
+            .then(data => {
+                const books = data;
+                // console.log(books[0].name)
+                for (let index = 0; index <= books.length - 1; index++ ){
+                    let book = books[index].name
+                    let button = document.createElement('button')
+                    let a = document.createElement('a')
 
-            document.body.appendChild(a);
-            a.click();
+                    document.body.appendChild(button)
 
-            document.body.removeChild(a);
-        }
+                    a.href = '/'.concat(book)
+                    a.download = book
+
+                    button.appendChild(a)
+                    button.onclick = function(){
+                        a.click()
+                    }
+                    button.textContent = book
+
+
+                }
+            })
+            .catch(error => console.error('Error:', error));    
     </script>
 </body>
+
 </html>

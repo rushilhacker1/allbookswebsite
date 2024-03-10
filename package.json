@@ -22,6 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "hono": "^4.0.9",
+    "localtunnel": "^2.0.2",
     "sqlite3": "^5.1.7"
   }
 }
