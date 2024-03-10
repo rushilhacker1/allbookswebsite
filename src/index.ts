@@ -30,15 +30,15 @@ try {
 }
 
 async function addAllPdfs(){
-let fileNames = await readdir("./public/pdf"); // returns a JS array of just short/local file-names, not paths.
+let fileNames = (await readdir("./public/pdf")).map(item => item.replace(".pdf","")); // returns a JS array of just short/local file-names, not paths.
 let current = await getBooks();
 
-current = current.map(item => item.name)
+current = current.map(item => item.name.replace(".pdf",""))
 fileNames = removeElements(current, fileNames)
 
 if (fileNames.length != 0){
   for (let index = 0; index <= fileNames.length - 1; index++ ){
-      insertBook(fileNames[index])
+      insertBook(fileNames[index].replace(".pdf",""))
   }
 }
 }
