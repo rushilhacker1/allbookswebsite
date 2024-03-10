@@ -10,9 +10,8 @@ export async function createTable() {
         await db.run(`
       CREATE TABLE IF NOT EXISTS books (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL,
-        url TEXT NOT NULL
-      );
+        name TEXT NOT NULL
+    );
     `);
         console.log('Table "books" created successfully');
     } catch (error) {
@@ -21,9 +20,9 @@ export async function createTable() {
 }
 
 
-export async function insertBook(name: string, url: string) {
+export async function insertBook(name: string) {
     try {
-        await db.run('INSERT INTO books (name, url) VALUES (?, ?)', [name, url]);
+        await db.run('INSERT INTO books (name) VALUES (?, ?)', [name]);
         console.log(`Book "${name}" added to database`);
     } catch (error) {
         console.error('Error adding book:', error);

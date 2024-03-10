@@ -3,9 +3,10 @@ import { getBooks } from './databaseManagement'
 
 async function createPdfRoutes(app:any) {
     const books = await getBooks()
-    let book:any = books[0]
+    let book:any
     for (book of books) {
-      app.use(`/${book.name}`, serveStatic({ path: book.url }))
+      let name = book.name
+      app.use(`/${name}`, serveStatic({ path: `./public/pdf/${name}.pdf` }))
     }
   }
 export async function create_routes(app:any){
