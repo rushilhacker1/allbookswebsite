@@ -1,6 +1,16 @@
+
+
 body button {
-    width: 90%;
+    width: 20%;
     padding: 15px;
     margin: 20px;
     justify-self: center;
+    color: white;
+    background: blue;
+    font-weight: bolder;
+    font-family: 'Open Sans';
+}
+
+body {
+    display: grid;
 }
