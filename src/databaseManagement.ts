@@ -31,7 +31,7 @@ export async function insertBook(name: string) {
 
 export async function getBooks() {
     try {
-        const rows = await db.query('SELECT * FROM books').all();
+        const rows:any = await db.query('SELECT * FROM books').all();
         return rows;
     } catch (error) {
         console.error('Error fetching books:', error);
